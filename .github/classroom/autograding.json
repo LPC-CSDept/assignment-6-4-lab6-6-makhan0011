@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "T1",
+      "setup": "",
+      "run": "g++ -std=c++11 A64.cpp && ./a.out",
+      "input": "90 10",
+      "output": "[2,       3,       5,      7,       11,      13,      17,      19,      23,      29,      31,      37,      41,      43,      47,      53,      59,      61,      67,      71,      73,      79,      83,      89,      97]",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "T2",
+      "setup": "",
+      "run": "g++ -std=c++11 A64.cpp && ./a.out",
+      "input": "90 90",
+      "output": "[97]",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "T3",
+      "setup": "",
+      "run": "g++ -std=c++11 A64.cpp && ./a.out",
+      "input": "70 90",
+      "output": "[71, 73, 79, 83, 89]",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}

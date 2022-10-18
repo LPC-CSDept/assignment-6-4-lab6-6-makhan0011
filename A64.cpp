@@ -14,22 +14,69 @@ using namespace std;
 
 //----------
 // Make a line for Function Prototype for getListprime Here
-//----------
 
-int main()
+// printPrimeList function that asks user for input and determines if input is prime
+void printPrimeList(int a, int b) {
+
+    // asking user for input and taking input to determine prime numbers in a for loop
+    int flag;
+    cout << " Prime numbers between " << a << " and " << b << ":" << endl;
+    
+    for (int i = a; i <= b; i++) {
+        if (i == 1 || i == 0)
+            continue;
+        flag = 1;
+        for (int j = 2; j <= (i / 2); ++j) {
+            // for(int j =2; j<= (i/j); ++j) {
+            // for (int j=2; j<i; j++)
+            if (i % j == 0) {
+                flag = 0;
+                break;
+            }
+        }
+	
+	// if flag is 1 then output list of prime numbers
+        if (flag == 1) {
+            cout << i << " ";
+        }
+    }
+}
+
+// functions that list prime numbers in a certain arrangement
+void getListprime(int begin)
 {
-	int begin, end;
-	cout << "Enter your input (two integer for range ) \n";
-	cin >> begin >> end;
-	if (begin < end)
-		getListprime(begin, end);
-	else if (begin > end)
-		getListprime();
-	else
-		getListprime(begin);
+    printPrimeList(begin, 100);
+}
+void getListprime()
+{
+    printPrimeList(0, 100);
 }
 void getListprime(int begin, int end)
 {
+    printPrimeList(begin, end);
+}
 
-	// Complete this function
+// main function that gets prime list
+int main() {
+
+    // declaring begin and end and declaring as int
+    int begin, end;
+    
+    // asking user for two inputs
+    cout << "Enter your input (two integer for range ) \n";
+    cin >> begin >> end;
+    
+    // input check
+    if (begin <= 0 || end <= 0)
+    {
+        cout << "Invalid!";
+    }
+    
+    // if statement
+    if (begin < end)
+        getListprime(begin, end);
+    else if (begin > end)
+        getListprime();
+    else
+        getListprime(begin);
 }
